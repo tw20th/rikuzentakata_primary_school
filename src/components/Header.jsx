@@ -14,7 +14,7 @@ const Header = ({ onSearch }) => {
   return (
     <header
       style={{
-        position: "fixed",
+        position: "sticky", // fixedをstickyに変更
         top: 0,
         width: "100%",
         background: "#007BFF",

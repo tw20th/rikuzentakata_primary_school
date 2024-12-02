@@ -8,11 +8,63 @@ body {
   color: #333333;
 }
 
-#app {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ======= ヘッダーのスタイル（sticky対応） ======= */
+header {
+  position: sticky; /* スクロール時に固定 */
+  top: 0; /* ヘッダーの固定開始位置 */
+  width: 100%;
+  background-color: #007BFF;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ヘッダーの影を追加 */
+  padding: 1.5rem 0; /* ヘッダー内の余白を調整 */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fff;
   text-align: center;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* メニュー項目の間隔 */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  padding: 0.5rem 1rem; /* ナビゲーションリンクの余白 */
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px; /* リンクを少し丸く */
+}
+
+header nav ul li a:hover {
+  background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+header nav ul li a.active {
+  background-color: #FFD700; /* 現在のページのリンクを強調 */
+  color: #333;
+}
+
+header input[type="text"] {
+  margin-top: 1.5rem; /* 検索バーの上部余白 */
+  padding: 0.75rem; /* 検索バーの内側余白 */
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 /* ======= カードデザイン ======= */
@@ -144,12 +196,12 @@ body {
 }
 
 .swiper-pagination-bullet {
-  background: #00796b; /* ページネーションの色 */
+  background: #00796b;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #00796b; /* ナビゲーション矢印の色 */
+  color: #00796b;
 }
 
 .page-container {
@@ -199,62 +251,4 @@ section {
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header {
-  position: sticky; /* スクロール時に固定 */
-  top: 0; /* ヘッダーの固定開始位置 */
-  width: 100%;
-  background-color: #007BFF;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ヘッダーの影を追加 */
-  padding: 1.5rem 0; /* ヘッダー内の余白を調整 */
-}
-
-header h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  color: #fff;
-  text-align: center;
-}
-
-header nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem; /* メニュー項目の間隔 */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-header nav ul li {
-  padding: 0.5rem 1rem; /* ナビゲーションリンクの余白 */
-}
-
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px; /* リンクを少し丸く */
-}
-
-header nav ul li a:hover {
-  background-color: #0056b3; /* ホバー時の背景色 */
-}
-
-header nav ul li a.active {
-  background-color: #FFD700; /* 現在のページのリンクを強調 */
-  color: #333;
-}
-
-header input[type="text"] {
-  margin-top: 1.5rem; /* 検索バーの上部余白 */
-  padding: 0.75rem; /* 検索バーの内側余白 */
-  width: 80%;
-  max-width: 400px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 8px;
-  border: 1px solid #ccc;
 }
