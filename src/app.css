@@ -151,3 +151,24 @@ body {
 .swiper-button-prev {
   color: #00796b; /* ナビゲーション矢印の色 */
 }
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.8;
+}
+
+.page-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-container section {
+  margin-bottom: 2rem;
+}
+
+.page-container ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
