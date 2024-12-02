@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const location = useLocation(); // 現在のページを取得
 
   const handleSearch = (event) => {
     const query = event.target.value;
@@ -11,7 +12,18 @@ const Header = ({ onSearch }) => {
   };
 
   return (
-    <header style={{ background: "#007BFF", padding: "1rem", color: "#fff" }}>
+    <header
+      style={{
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        background: "#007BFF",
+        padding: "1rem",
+        color: "#fff",
+        zIndex: 1000,
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+      }}
+    >
       <h1 style={{ textAlign: "center", marginBottom: "1rem" }}>学校サイト</h1>
       <nav>
         <ul
@@ -24,54 +36,30 @@ const Header = ({ onSearch }) => {
             padding: 0,
           }}
         >
-          <li>
-            <Link
-              to="/"
-              style={{ color: "#fff", textDecoration: "none", fontWeight: "bold" }}
-            >
-              ホーム
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              style={{ color: "#fff", textDecoration: "none", fontWeight: "bold" }}
-            >
-              学校紹介
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/courses"
-              style={{ color: "#fff", textDecoration: "none", fontWeight: "bold" }}
-            >
-              コース紹介
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/admissions"
-              style={{ color: "#fff", textDecoration: "none", fontWeight: "bold" }}
-            >
-              入試情報
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/access"
-              style={{ color: "#fff", textDecoration: "none", fontWeight: "bold" }}
-            >
-              アクセス
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              style={{ color: "#fff", textDecoration: "none", fontWeight: "bold" }}
-            >
-              お問い合わせ
-            </Link>
-          </li>
+          {[
+            { path: "/", label: "ホーム" },
+            { path: "/about", label: "学校紹介" },
+            { path: "/courses", label: "コース紹介" },
+            { path: "/admissions", label: "入試情報" },
+            { path: "/access", label: "アクセス" },
+            { path: "/contact", label: "お問い合わせ" },
+          ].map((menu) => (
+            <li key={menu.path}>
+              <Link
+                to={menu.path}
+                style={{
+                  color: location.pathname === menu.path ? "#FFD700" : "#fff", // 現在のページを強調
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "4px",
+                  background: location.pathname === menu.path ? "#0056b3" : "transparent",
+                }}
+              >
+                {menu.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <input
