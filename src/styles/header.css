@@ -1,0 +1,55 @@
+/* ======= ヘッダーのスタイル ======= */
+header {
+    position: sticky; /* スクロール時に固定 */
+    top: 0;
+    width: 100%;
+    background-color: #007BFF;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+  }
+  
+  header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
+  header nav ul li a:hover {
+    background-color: #0056b3;
+  }
+  
+  header nav ul li a.active {
+    background-color: #FFD700;
+    color: #333;
+  }
+  
+  header input[type="text"] {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    width: 80%;
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  

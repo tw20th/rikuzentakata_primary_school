@@ -4,14 +4,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CardGrid from "./components/CardGrid";
 import About from "./pages/About";
-import Courses from "./pages/Courses"; // コース紹介ページ
-import Admissions from "./pages/Admissions"; // 入試情報ページ
-import Access from "./pages/Access"; // アクセスページ
+import Courses from "./pages/Courses";
+import Admissions from "./pages/Admissions";
+import Access from "./pages/Access";
 import Contact from "./pages/Contact";
 import Pages from "./pages/Pages";
 import ArticleDetail from "./pages/ArticleDetail";
 
-import "./app.css";
+import "./styles/index.css"; // styles/index.css をインポート
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
